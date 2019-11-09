@@ -130,7 +130,7 @@ class WebViewController: BaseViewController {
         webView.loadRequest(request)
     }
 
-    func popViewController(){
+    @objc func popViewController(){
         if webView.canGoBack && canGoBack == true {
             webView.goBack()
         }else{
@@ -140,7 +140,7 @@ class WebViewController: BaseViewController {
     }
     
     //收藏帖子
-    func collect(){
+    @objc func collect(){
         _ = context?.evaluateScript("wyPtd.collection()")
     }
     
@@ -158,7 +158,7 @@ class WebViewController: BaseViewController {
         
     
     //发表
-    func publish(){
+    @objc func publish(){
         guard isPublishClick == false else{
             HCShowInfo(info: "正在处理")
             return
@@ -275,7 +275,7 @@ class WebViewController: BaseViewController {
 
 extension WebViewController : UIWebViewDelegate{
     
-    func webView(_ webView: UIWebView, shouldStartLoadWith request: URLRequest, navigationType: UIWebViewNavigationType) -> Bool{
+    func webView(_ webView: UIWebView, shouldStartLoadWith request: URLRequest, navigationType: UIWebView.NavigationType) -> Bool{
         print(request.url?.absoluteString.removingPercentEncoding)
         let s = request.url?.absoluteString
         let rs = "gysz.ivfcn.com://".addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!

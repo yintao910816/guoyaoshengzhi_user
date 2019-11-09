@@ -14,11 +14,11 @@ class BindHospitalViewController: UIViewController {
     
     lazy var noticeBtn : UIButton = {
             let b = UIButton()
-            b.setTitle("服务条款", for: UIControlState.normal)
+            b.setTitle("服务条款", for: .normal)
             b.titleLabel?.font = UIFont.init(name: kReguleFont, size: 14)
-            b.setTitleColor(kTextColor, for: UIControlState.normal)
-            b.setImage(UIImage.init(named: "未选中"), for: UIControlState.normal)
-            b.setImage(UIImage.init(named: "选中"), for: UIControlState.selected)
+            b.setTitleColor(kTextColor, for: .normal)
+            b.setImage(UIImage.init(named: "未选中"), for: .normal)
+            b.setImage(UIImage.init(named: "选中"), for: .selected)
             b.titleEdgeInsets = UIEdgeInsets.init(top: 0, left: 10, bottom: 0, right: 0)
             b.imageEdgeInsets = UIEdgeInsets.init(top: 0, left: -10, bottom: 0, right: 0)
             b.isSelected = true
@@ -260,13 +260,13 @@ class BindHospitalViewController: UIViewController {
             make.left.top.height.equalTo(contV)
             make.width.equalTo(100)
         }
-        noticeBtn.addTarget(self, action: #selector(BindHospitalViewController.notice), for: UIControlEvents.touchUpInside)
+        noticeBtn.addTarget(self, action: #selector(BindHospitalViewController.notice), for: .touchUpInside)
         
         
         let protocolBtn = UIButton()
-        protocolBtn.setTitle("《app使用协议和隐私条款》", for: UIControlState.normal)
+        protocolBtn.setTitle("《app使用协议和隐私条款》", for: .normal)
         protocolBtn.titleLabel?.font = UIFont.init(name: kReguleFont, size: 14)
-        protocolBtn.setTitleColor(kDefaultThemeColor, for: UIControlState.normal)
+        protocolBtn.setTitleColor(kDefaultThemeColor, for: .normal)
         
         contV.addSubview(protocolBtn)
         protocolBtn.snp.updateConstraints { (make) in
@@ -288,8 +288,8 @@ class BindHospitalViewController: UIViewController {
         }
         bindBtn.layer.cornerRadius = 5
         bindBtn.backgroundColor = kDefaultThemeColor
-        bindBtn.setTitle("绑定", for: UIControlState.normal)
-        bindBtn.addTarget(self, action: #selector(BindHospitalViewController.bindHospital), for: UIControlEvents.touchUpInside)
+        bindBtn.setTitle("绑定", for: .normal)
+        bindBtn.addTarget(self, action: #selector(BindHospitalViewController.bindHospital), for: .touchUpInside)
     }
     
     

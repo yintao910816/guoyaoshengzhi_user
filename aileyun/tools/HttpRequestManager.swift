@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import HandyJSON
 
 class HttpRequestManager {
     
@@ -38,7 +39,7 @@ class HttpRequestManager {
         HttpClient.shareIntance.POST(USER_LOGIN_URL, parameters: dic) { (result, ccb) in
             if ccb.success() {
                 let dic = ccb.data as! [String : Any]
-                let model = LocalUserModel.init(dic)
+                let model = JSONDeserializer<LocalUserModel>.deserializeFrom(dict: dic)
                 callback(true, model)
             }else{
                 callback(false, nil)
@@ -52,7 +53,7 @@ class HttpRequestManager {
             if ccb.success() {
                 let arr = ccb.data as! [[String : Any]]
                 if let dic = arr.first {
-                    let model = UserBalanceModel.init(dic)
+                    let model = JSONDeserializer<UserBalanceModel>.deserializeFrom(dict: dic)
                     callback(true, model)
                 }else {
                     callback(false, nil)
@@ -76,14 +77,16 @@ class HttpRequestManager {
                 }
                 var arr = [DoctorCommentModel]()
                 for dic in tempArr! {
-                    let model = DoctorCommentModel.init(dic)
-                    arr.append(model)
+//                    let model = DoctorCommentModel.init(dic)
+                    if let model = JSONDeserializer<DoctorCommentModel>.deserializeFrom(dict: dic) {
+                        arr.append(model)
+                    }
                 }
                 
                 var docModel : ConsultDoctorModel?
                 if pageNo == "1" {
                     let tempDic = dic["doctorDeatil"] as? [String : Any]
-                    docModel = ConsultDoctorModel.init(tempDic!)
+                    docModel = JSONDeserializer<ConsultDoctorModel>.deserializeFrom(dict: tempDic!)
                 }
                 
                 callback(true, docModel, arr)
@@ -105,15 +108,19 @@ class HttpRequestManager {
                     let didArr = dic["consulted"] as? [[String : Any]]
                     if let arr = didArr {
                         for i in arr{
-                            let model = ConsultedModel.init(i)
-                            consultedArr.append(model)
+//                            let model = ConsultedModel.init(i)
+                            if let model = JSONDeserializer<ConsultedModel>.deserializeFrom(dict: i) {
+                                consultedArr.append(model)
+                            }
                         }
                     }
                     let arr = dic["all"] as? [[String : Any]]
                     if let arr = arr {
                         for i in arr{
-                            let model = ConsultDoctorModel.init(i)
-                            doctorArr.append(model)
+//                            let model = ConsultDoctorModel.init(i)
+                            if let model = JSONDeserializer<ConsultDoctorModel>.deserializeFrom(dict: i) {
+                                doctorArr.append(model)
+                            }
                         }
                     }
                 }
@@ -143,7 +150,7 @@ class HttpRequestManager {
         HttpClient.shareIntance.POST(PATIENT_CONSULT_GETEVALUATION, parameters: dic) { (result, ccb) in
             if ccb.success(){
                 let dic = ccb.data as? [String : Any]
-                let model = DoctorCommentModel.init(dic!)
+                let model = JSONDeserializer<DoctorCommentModel>.deserializeFrom(dict: dic)
                 callback(true, model)
             }else{
                 callback(false, nil)
@@ -201,7 +208,7 @@ class HttpRequestManager {
                     callback(false, nil)
                     return
                 }
-                let model = weixinPrepayModel.init(dic)
+                let model = JSONDeserializer<weixinPrepayModel>.deserializeFrom(dict: dic)
                 callback(true, model)
             }else{
                 callback(false, nil)
@@ -273,7 +280,7 @@ class HttpRequestManager {
                     
                     UserDefaults.standard.set(dic, forKey: kUserDic)
                     
-                    let model = HCUserModel.init(dic)
+                    let model = JSONDeserializer<HCUserModel>.deserializeFrom(dict: dic)
                     UserManager.shareIntance.HCUser = model
                 }
                 callback(true, ccb.msg)
@@ -298,7 +305,7 @@ class HttpRequestManager {
 //                        UserDefaults.standard.set(phone, forKey: kUserPhone)
 //                    }
                     
-                    let model = HCUserModel.init(dic)
+                    let model = JSONDeserializer<HCUserModel>.deserializeFrom(dict: dic)
                     UserManager.shareIntance.HCUser = model
                 }
 
@@ -364,7 +371,7 @@ class HttpRequestManager {
                 let dic = ccb.data as? [String : Any]
                 if let dic = dic {
                     UserDefaults.standard.set(dic, forKey: kUserInfoDic)
-                    let infoModel = HCUserInfoModel.init(dic)
+                    let infoModel = JSONDeserializer<HCUserInfoModel>.deserializeFrom(dict: dic)
                     UserManager.shareIntance.HCUserInfo = infoModel
                 }
                 
@@ -387,8 +394,10 @@ class HttpRequestManager {
                 if let dicArr = dicArr {
                     var arr = [HomeBannerModel]()
                     for dic in dicArr {
-                        let m = HomeBannerModel.init(dic)
-                        arr.append(m)
+//                        let m = HomeBannerModel.init(dic)
+                        if let m = JSONDeserializer<HomeBannerModel>.deserializeFrom(dict: dic) {
+                            arr.append(m)
+                        }
                     }
                     callback(true, arr, ccb.msg)
                 }else{
@@ -409,8 +418,10 @@ class HttpRequestManager {
                 if let dicArr = dicArr {
                     var arr = [HomeFunctionModel]()
                     for dic in dicArr {
-                        let m = HomeFunctionModel.init(dic)
-                        arr.append(m)
+//                        let m = HomeFunctionModel.init(dic)
+                        if let m = JSONDeserializer<HomeFunctionModel>.deserializeFrom(dict: dic) {
+                            arr.append(m)
+                        }
                     }
                     callback(true, arr, ccb.msg)
                 }else{
@@ -439,7 +450,7 @@ class HttpRequestManager {
 //                        UserDefaults.standard.set(phone, forKey: kUserPhone)
 //                    }
                     
-                    let model = HCUserModel.init(dic)
+                    let model = JSONDeserializer<HCUserModel>.deserializeFrom(dict: dic)
                     UserManager.shareIntance.HCUser = model
                     UserDefaults.standard.set(dic, forKey: kUserDic)
                 }
@@ -464,7 +475,7 @@ class HttpRequestManager {
 //                        UserDefaults.standard.set(phone, forKey: kUserPhone)
 //                    }
                     
-                    let model = HCUserModel.init(dic)
+                    let model = JSONDeserializer<HCUserModel>.deserializeFrom(dict: dic)
                     UserManager.shareIntance.HCUser = model
                 }
                 callback(true, "绑定成功")
@@ -486,7 +497,9 @@ class HttpRequestManager {
                 var resultArr = [HospitalListModel]()
                 for dic in arr {
 //                    FindRealClassForDicValue(dic: dic)
-                    resultArr.append(HospitalListModel.init(dic))
+                    if let m = JSONDeserializer<HospitalListModel>.deserializeFrom(dict: dic) {
+                        resultArr.append(m)
+                    }
                 }
                 callback(true, resultArr)
             }else{
@@ -555,7 +568,9 @@ class HttpRequestManager {
                 var tempArr = [DoctorAttentionModel]()
                 for i in arr {
                     let tempDic = i as! [String : Any]
-                    tempArr.append(DoctorAttentionModel.init(tempDic))
+                    if let m = JSONDeserializer<DoctorAttentionModel>.deserializeFrom(dict: tempDic) {
+                        tempArr.append(m)
+                    }
                 }
                 //是否有下一页
                 let hasNextS = dic["hasNextPage"] as! NSNumber
@@ -582,7 +597,9 @@ class HttpRequestManager {
                 for i in arr {
                     let tempDic = i as! [String : Any]
 //                    FindRealClassForDicValue(dic: tempDic)
-                    tempArr.append(DoctorModel.init(tempDic))
+                    if let m = JSONDeserializer<DoctorModel>.deserializeFrom(dict: tempDic) {
+                        tempArr.append(m)
+                    }
                 }
                 //是否有下一页
                 let hasNextS = dic["hasNextPage"] as! NSNumber
@@ -605,7 +622,9 @@ class HttpRequestManager {
                 var tempArr = [CommentDocModel]()
                 for i in arr {
                     let tempDic = i as! [String : Any]
-                    tempArr.append(CommentDocModel.init(tempDic))
+                    if let m = JSONDeserializer<CommentDocModel>.deserializeFrom(dict: tempDic) {
+                        tempArr.append(m)
+                    }
                 }
                 //是否有下一页
                 let hasNextS = dic["hasNextPage"] as! NSNumber
@@ -643,7 +662,7 @@ class HttpRequestManager {
                 let dic = ccb.data as! [String : Any]
                 HCPrint(message: dic)
                 UserDefaults.standard.setValue(dic, forKey: kBindDic)
-                let model = BindedModel.init(dic)
+                let model = JSONDeserializer<BindedModel>.deserializeFrom(dict: dic)
                 UserManager.shareIntance.BindedModel = model
                 callback(true, model)
             }else{
@@ -692,11 +711,13 @@ class HttpRequestManager {
         let dic = NSDictionary.init(dictionary: ["hospitalId" : hospitalId])
         HttpClient.shareIntance.GET(HC_KNOWLEDGE_LIST, parameters: dic) { (result, ccb) in
             if ccb.success() {
-                let tempArr = ccb.data as! NSArray
+                let tempArr = ccb.data as! [[String: Any]]
                 var arr = [KnowledgeListModel]()
                 for i in tempArr {
-                    let m = KnowledgeListModel.mj_object(withKeyValues: i)
-                    arr.append(m!)
+//                    let m = KnowledgeListModel.mj_object(withKeyValues: i)
+                    if let m = JSONDeserializer<KnowledgeListModel>.deserializeFrom(dict: i) {
+                        arr.append(m)
+                    }
                 }
                 callback(true, arr)
             }else{
@@ -717,8 +738,9 @@ class HttpRequestManager {
                 var arr = [TreasuryTypeModel]()
                 for i in tempArr {
                     let j = i as! [String : Any]
-                    let m = TreasuryTypeModel.init(j)
-                    arr.append(m)
+                    if let m = JSONDeserializer<TreasuryTypeModel>.deserializeFrom(dict: j) {
+                        arr.append(m)
+                    }
                 }
                 callback(true, arr)
             }else{
@@ -736,7 +758,8 @@ class HttpRequestManager {
             
             if ccb.success() {
                 let dic = ccb.data as! [String : Any]
-                let m = TreasuryListModel.mj_object(withKeyValues: dic)
+//                let m = TreasuryListModel.mj_object(withKeyValues: dic)
+                let m = JSONDeserializer<TreasuryListModel>.deserializeFrom(dict: dic)
                 callback(true, m)
             }else{
                 callback(false, nil)
@@ -774,8 +797,10 @@ class HttpRequestManager {
                 let arr = ccb.data as! [[String : Any]]
                 var tempArr = [messageGroupModel]()
                 for i in arr {
-                    let m = messageGroupModel.init(i)
-                    tempArr.append(m)
+//                    let m = messageGroupModel.init(i)
+                    if let m = JSONDeserializer<messageGroupModel>.deserializeFrom(dict: i) {
+                        tempArr.append(m)
+                    }
                 }
                 callback(true, tempArr)
             }else{
@@ -796,8 +821,9 @@ class HttpRequestManager {
                 let hasNext = (dic["hasNextPage"] as! NSNumber).intValue == 0 ? false : true
                 var tempArr = [MessageDetailModel]()
                 for i in arr {
-                    let m = MessageDetailModel.init(i)
-                    tempArr.append(m)
+                    if let m = JSONDeserializer<MessageDetailModel>.deserializeFrom(dict: i) {
+                        tempArr.append(m)
+                    }
                 }
                 callback(true, hasNext, tempArr)
             }else{
@@ -882,8 +908,9 @@ class HttpRequestManager {
                 var tempArr = [DoctorModel]()
                 for i in arr {
                     let tempDic = i as! [String : Any]
-                    
-                    tempArr.append(DoctorModel.init(tempDic))
+                    if let m = JSONDeserializer<DoctorModel>.deserializeFrom(dict: tempDic) {
+                        tempArr.append(m)
+                    }
                 }
                 //是否有下一页
                 let hasNextS = dic["hasNextPage"] as! NSNumber
@@ -906,7 +933,9 @@ class HttpRequestManager {
                 var tempArr = [DoctorModel]()
                 for i in arr {
                     let tempDic = i as! [String : Any]
-                    tempArr.append(DoctorModel.init(tempDic))
+                    if let m = JSONDeserializer<DoctorModel>.deserializeFrom(dict: tempDic) {
+                        tempArr.append(m)
+                    }
                 }
                 callback(true, tempArr, ccb.msg)
             }else{
@@ -922,7 +951,7 @@ class HttpRequestManager {
             HCPrint(message: result)
             if ccb.success() {
                 let dic = ccb.data as! [String : Any]
-                let model = HC_consultAddModel.init(dic)
+                let model = JSONDeserializer<HC_consultAddModel>.deserializeFrom(dict: dic)
                 callback(true, model, ccb.msg)
             }else{
                 callback(false, nil, ccb.msg)
@@ -1112,8 +1141,10 @@ class HttpRequestManager {
                     var strArr = [NoticeHomeVModel]()
                     for i in arr{
                         let j = i as! [String : Any]
-                        let m = NoticeHomeVModel.init(j)
-                        strArr.append(m)
+//                        let m = NoticeHomeVModel.init(j)
+                        if let m = JSONDeserializer<NoticeHomeVModel>.deserializeFrom(dict: j) {
+                            strArr.append(m)
+                        }
                     }
                     callback(strArr, "获取成功")
                 }else{
@@ -1134,8 +1165,10 @@ class HttpRequestManager {
                     var modelArr = [GoodNewsModel]()
                     for i in arr {
                         let j = i as! [String : Any]
-                        let m = GoodNewsModel.init(j)
-                        modelArr.append(m)
+//                        let m = GoodNewsModel.init(j)
+                        if let m = JSONDeserializer<GoodNewsModel>.deserializeFrom(dict: j) {
+                            modelArr.append(m)
+                        }
                     }
                     callback(modelArr, "请求成功")
                 }else{
@@ -1151,7 +1184,7 @@ class HttpRequestManager {
         HttpClient.shareIntance.GET(HC_NOTREAD_NUM, parameters: nil) { (result, ccb) in
             if ccb.success(){
                 let dic = ccb.data as! [String : Any]
-                let m = UnreadModel.init(dic)
+                let m = JSONDeserializer<UnreadModel>.deserializeFrom(dict: dic)
                 callback(m, "请求成功")
             }else{
                 callback(nil, "请求失败")

@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import HandyJSON
 
-class KnowledgeModel: NSObject {
+class KnowledgeModel: NSObject, HandyJSON {
     
     var PAGE_URL : String?
     var TREATMENT : String?
@@ -31,6 +32,10 @@ class KnowledgeModel: NSObject {
         get{
             return "PAGE_URL\(PAGE_URL)" + " TREATMENT\(TREATMENT)" + " AUTHOR\(AUTHOR)" + " DIGEST\(DIGEST)" + " CREATE_TIME\(CREATE_TIME)" + " SICK\(SICK)" + " MEDIA_ID\(MEDIA_ID)" + " D\(ID)" + " COVER_PIC\(COVER_PIC)" + " TOP_TIME\(TOP_TIME)" + " KEYWORD\(KEYWORD)" + " TREATMENT_PLAN\(TREATMENT_PLAN)" + " TITLE\(TITLE)" + " KNOWLEDGE_TYPE\(KNOWLEDGE_TYPE)"
         }
+    }
+
+    required override init() {
+        
     }
 
 }

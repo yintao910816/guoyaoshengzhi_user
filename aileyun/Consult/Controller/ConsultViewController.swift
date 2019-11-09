@@ -66,9 +66,9 @@ class ConsultViewController: BaseViewController, UITableViewDelegate, UITableVie
         let contV = UIView.init(frame: CGRect.init(x: 0, y: 0, width: SCREEN_WIDTH - 40, height: 30))
         
         let searchBtn = UIButton.init(frame: CGRect.init(x: 0, y: 0, width: SCREEN_WIDTH - 120, height: 30))
-        searchBtn.setImage(UIImage.init(named: "搜索灰"), for: UIControlState.normal)
-        searchBtn.setTitle("搜索医生", for: UIControlState.normal)
-        searchBtn.setTitleColor(kLightTextColor, for: UIControlState.normal)
+        searchBtn.setImage(UIImage.init(named: "搜索灰"), for: .normal)
+        searchBtn.setTitle("搜索医生", for: .normal)
+        searchBtn.setTitleColor(kLightTextColor, for: .normal)
         searchBtn.titleLabel?.font = UIFont.init(name: kReguleFont, size: 14)
         searchBtn.layer.cornerRadius = 15
         searchBtn.layer.borderColor = kLightTextColor.cgColor
@@ -89,7 +89,7 @@ class ConsultViewController: BaseViewController, UITableViewDelegate, UITableVie
         self.navigationItem.titleView = contV
     }
     
-    func searchVC(){
+    @objc func searchVC(){
         self.navigationController?.pushViewController(SearchDocViewController(), animated: true)
     }
     
@@ -98,7 +98,7 @@ class ConsultViewController: BaseViewController, UITableViewDelegate, UITableVie
     }
 
 
-    func loadMoreData() {
+    @objc func loadMoreData() {
         self.tableView.mj_footer.endRefreshing()
 
         guard hasNext == true else{
@@ -140,7 +140,7 @@ class ConsultViewController: BaseViewController, UITableViewDelegate, UITableVie
 
     }
     
-    func requestData(){
+    @objc func requestData(){
         self.tableView.mj_header.endRefreshing()
         
         SVProgressHUD.show()
@@ -171,7 +171,7 @@ class ConsultViewController: BaseViewController, UITableViewDelegate, UITableVie
     }
 
 
-    func consultRecord(){
+    @objc func consultRecord(){
         self.navigationController?.pushViewController(ConsultRecordViewController(), animated: true)
     }
 

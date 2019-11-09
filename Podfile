@@ -1,8 +1,6 @@
 platform :ios, '8.0'
 
-target ‘aileyun’ do
-
-project '/Users/yintao/Desktop/项目/胡伟光医药项目/国药患者/shanghai/aileyun.xcodeproj' 
+target ‘aileyun’ do 
 
 use_frameworks!
 
@@ -22,6 +20,8 @@ pod ‘MJExtension’
 pod 'WechatOpenSDK'
 
 #pod 'IpsmapSDK'
+
+pod 'HandyJSON'
 
 end
 
