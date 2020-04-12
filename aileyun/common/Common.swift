@@ -41,13 +41,13 @@ let kpopAlertTime = "KpopAlertTime"
 let kScheme = "gysz.ivfcn.com"
 //let kScheme = "guoYaoSZ"
 
-let shareImgName = "logo.jpg"
+let shareImgName = "logo.png"
 
-let shareTitleL = "扫一扫，安装国药生殖"
+let shareTitleL = "扫一扫，安装南昌生殖"
 let qrcodeName = "QRcode"
-let appName = "国药生殖"
-let slogan = "国药生殖，助您早得贵子"
-let logoName = "logo.jpg"
+let appName = "南昌生殖"
+let slogan = "南昌生殖，助您早得贵子"
+let logoName = "logo.png"
 let shareURL = "http://t.cn/RYUiDdR"
 
 let kDefaultThemeColor = UIColor.init(red: 81/255.0, green: 151/255.0, blue: 202/255.0, alpha: 1)

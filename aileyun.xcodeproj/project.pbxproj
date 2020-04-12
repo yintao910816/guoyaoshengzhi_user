@@ -304,7 +304,6 @@
 		3CAEFA3B1F9ED2FB00DB20E1 /* GoodNewsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CAEFA3A1F9ED2FB00DB20E1 /* GoodNewsView.swift */; };
 		3CAEFA3D1F9ED5CA00DB20E1 /* goodnewsBaby.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CAEFA3C1F9ED5CA00DB20E1 /* goodnewsBaby.png */; };
 		3CAEFA3F1F9ED86A00DB20E1 /* GoodNewsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CAEFA3E1F9ED86A00DB20E1 /* GoodNewsTableViewCell.swift */; };
-		3CB439A020F5AE070028B7EC /* logo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3CB4399F20F5AE060028B7EC /* logo.jpg */; };
 		3CC266F91F9D908C0068E320 /* NetworkStatusTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CC266F81F9D908C0068E320 /* NetworkStatusTool.swift */; };
 		3CCC08F61FF4E05A00BE8A49 /* NoticeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CCC08F51FF4E05A00BE8A49 /* NoticeView.swift */; };
 		3CCC08F81FF4E14200BE8A49 /* NotiveViewTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CCC08F71FF4E14200BE8A49 /* NotiveViewTVCell.swift */; };
@@ -337,6 +336,7 @@
 		3CFADBD31F6908B2008E3E1E /* noData.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CFADBD11F6908B2008E3E1E /* noData.png */; };
 		B878828E214BAFB300EFCFEF /* PrepareRechargeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B878828C214BAFB300EFCFEF /* PrepareRechargeViewController.swift */; };
 		B878828F214BAFB300EFCFEF /* PrepareRechargeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B878828D214BAFB300EFCFEF /* PrepareRechargeViewController.xib */; };
+		B88A108D2442AB7E00677A21 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = B88A108C2442AB7E00677A21 /* logo.png */; };
 		F666A4136C77989F16603994 /* Pods_aileyun.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E253F5689AE7ECF7180033EA /* Pods_aileyun.framework */; };
 /* End PBXBuildFile section */
 
@@ -423,7 +423,7 @@
 		3C30E8A51F34649A00E35AC9 /* TreatRecordTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TreatRecordTableViewCell.swift; sourceTree = "<group>"; };
 		3C30E8A71F3470F000E35AC9 /* BindedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BindedViewController.swift; path = ../User/Controller/BindedViewController.swift; sourceTree = "<group>"; };
 		3C33921D1F204DD300EEF0F9 /* CommentStarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentStarView.swift; sourceTree = "<group>"; };
-		3C3D78301EF3C07600DE6F46 /* aileyun.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = aileyun.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3C3D78301EF3C07600DE6F46 /* 南昌生殖.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "南昌生殖.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3C3D78331EF3C07600DE6F46 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3C3D783F1EF3C07600DE6F46 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3C3D785F1EF3C45D00DE6F46 /* MainTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
@@ -665,7 +665,6 @@
 		3CAEFA3A1F9ED2FB00DB20E1 /* GoodNewsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoodNewsView.swift; sourceTree = "<group>"; };
 		3CAEFA3C1F9ED5CA00DB20E1 /* goodnewsBaby.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = goodnewsBaby.png; sourceTree = "<group>"; };
 		3CAEFA3E1F9ED86A00DB20E1 /* GoodNewsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoodNewsTableViewCell.swift; sourceTree = "<group>"; };
-		3CB4399F20F5AE060028B7EC /* logo.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = logo.jpg; sourceTree = "<group>"; };
 		3CC266F81F9D908C0068E320 /* NetworkStatusTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkStatusTool.swift; sourceTree = "<group>"; };
 		3CCC08F51FF4E05A00BE8A49 /* NoticeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeView.swift; sourceTree = "<group>"; };
 		3CCC08F71FF4E14200BE8A49 /* NotiveViewTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotiveViewTVCell.swift; sourceTree = "<group>"; };
@@ -700,6 +699,7 @@
 		6D2808A40648D35BFB8F8A19 /* Pods-aileyun.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-aileyun.debug.xcconfig"; path = "Pods/Target Support Files/Pods-aileyun/Pods-aileyun.debug.xcconfig"; sourceTree = "<group>"; };
 		B878828C214BAFB300EFCFEF /* PrepareRechargeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrepareRechargeViewController.swift; sourceTree = "<group>"; };
 		B878828D214BAFB300EFCFEF /* PrepareRechargeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PrepareRechargeViewController.xib; sourceTree = "<group>"; };
+		B88A108C2442AB7E00677A21 /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
 		E253F5689AE7ECF7180033EA /* Pods_aileyun.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_aileyun.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -805,7 +805,7 @@
 		3C3D78311EF3C07600DE6F46 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				3C3D78301EF3C07600DE6F46 /* aileyun.app */,
+				3C3D78301EF3C07600DE6F46 /* 南昌生殖.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -1430,9 +1430,9 @@
 		3CB910FA1FE3663D0068E07E /* aileyun */ = {
 			isa = PBXGroup;
 			children = (
+				B88A108C2442AB7E00677A21 /* logo.png */,
 				3C6EE9A81FE8EA0500AD614E /* medicalRecord.jpg */,
 				3C6F54951F3ADAAC0009CC58 /* logo144.png */,
-				3CB4399F20F5AE060028B7EC /* logo.jpg */,
 				3C8201B11FC80CBA00617C3F /* QRcode.png */,
 				3C51A9321F0B63D6004ED84B /* 孕育未来.png */,
 			);
@@ -1515,7 +1515,7 @@
 			);
 			name = aileyun;
 			productName = aileyun;
-			productReference = 3C3D78301EF3C07600DE6F46 /* aileyun.app */;
+			productReference = 3C3D78301EF3C07600DE6F46 /* 南昌生殖.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -1690,7 +1690,6 @@
 				3C51A9971F0B63D6004ED84B /* 返回灰@3x.png in Resources */,
 				3C69B3671EF8BF940068355D /* 消息@3x.png in Resources */,
 				3C51A9771F0B63D6004ED84B /* 微信02@3x.png in Resources */,
-				3CB439A020F5AE070028B7EC /* logo.jpg in Resources */,
 				3C51A9821F0B63D6004ED84B /* 支付宝@2x.png in Resources */,
 				3C51A98B1F0B63D6004ED84B /* 星级@3x.png in Resources */,
 				3C309BBC1F96E95800A00D0B /* qrcode_vc.png in Resources */,
@@ -1731,6 +1730,7 @@
 				3C6EE9A91FE8EA0500AD614E /* medicalRecord.jpg in Resources */,
 				3CF098E01F4D86E0008128B5 /* navi_HL@3x.png in Resources */,
 				3CF098E21F4D86E0008128B5 /* navi@3x.png in Resources */,
+				B88A108D2442AB7E00677A21 /* logo.png in Resources */,
 				3C3D78871EF3D17900DE6F46 /* Disc@3x.png in Resources */,
 				3C3D78901EF3D17900DE6F46 /* Home_HL@2x.png in Resources */,
 				3C480C3F1FB989B000525309 /* 论@2x.png in Resources */,
@@ -2073,7 +2073,7 @@
 					"$(PROJECT_DIR)/aileyun/tools/VoiceConvert/lib",
 					"$(PROJECT_DIR)/aileyun/tools/UMessage_Sdk_1.5.0a",
 				);
-				MARKETING_VERSION = 2.0.001;
+				MARKETING_VERSION = 2.1.001;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
@@ -2108,7 +2108,7 @@
 					"-fobjc-arc",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.sinopharm.shgy;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "南昌生殖";
 				SWIFT_OBJC_BRIDGING_HEADER = aileyun/Bridge.h;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -2146,7 +2146,7 @@
 					"$(PROJECT_DIR)/aileyun/tools/VoiceConvert/lib",
 					"$(PROJECT_DIR)/aileyun/tools/UMessage_Sdk_1.5.0a",
 				);
-				MARKETING_VERSION = 2.0.001;
+				MARKETING_VERSION = 2.1.001;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
@@ -2181,7 +2181,7 @@
 					"-fobjc-arc",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.sinopharm.shgy;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "南昌生殖";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = aileyun/Bridge.h;
 				SWIFT_VERSION = 5.0;
