@@ -178,8 +178,10 @@ class LoginViewController: UIViewController {
 
         
         #if DEBUG
-        cellphoneTF.text = "13995631675"
-        passwordTF.text  = "123456"
+//        cellphoneTF.text = "13995631675"
+//        passwordTF.text  = "123456"
+        cellphoneTF.text = "18571772067"
+        passwordTF.text  = "110119"
         #endif
     }
     
