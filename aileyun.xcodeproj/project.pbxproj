@@ -2073,7 +2073,7 @@
 					"$(PROJECT_DIR)/aileyun/tools/VoiceConvert/lib",
 					"$(PROJECT_DIR)/aileyun/tools/UMessage_Sdk_1.5.0a",
 				);
-				MARKETING_VERSION = 2.1.001;
+				MARKETING_VERSION = 2.1.002;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
@@ -2146,7 +2146,7 @@
 					"$(PROJECT_DIR)/aileyun/tools/VoiceConvert/lib",
 					"$(PROJECT_DIR)/aileyun/tools/UMessage_Sdk_1.5.0a",
 				);
-				MARKETING_VERSION = 2.1.001;
+				MARKETING_VERSION = 2.1.002;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",

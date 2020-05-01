@@ -99,8 +99,8 @@ class ConsultViewController: BaseViewController, UITableViewDelegate, UITableVie
 
 
     @objc func loadMoreData() {
-        self.tableView.mj_footer.endRefreshing()
-
+//        self.tableView.mj_footer.endRefreshing()
+        
         guard hasNext == true else{
             HCShowError(info: "没有更多信息")
             return
@@ -136,6 +136,7 @@ class ConsultViewController: BaseViewController, UITableViewDelegate, UITableVie
             }else{
                 HCShowError(info: msg)
             }
+            self?.tableView.mj_footer.endRefreshing()
         })
 
     }
