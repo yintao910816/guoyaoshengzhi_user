@@ -102,6 +102,7 @@ class ConsultViewController: BaseViewController, UITableViewDelegate, UITableVie
 //        self.tableView.mj_footer.endRefreshing()
         
         guard hasNext == true else{
+            tableView.mj_footer.endRefreshing()
             HCShowError(info: "没有更多信息")
             return
         }
